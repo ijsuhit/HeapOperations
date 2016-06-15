@@ -16,6 +16,7 @@ void heapInsert(int *a, int heapSize, int n);
 void printHeap(int *a, int n);
 void printArray(int *a, int n);
 void printSpaces(int n);
+void printHeapMenu();
 
 
 int main() {
@@ -88,18 +89,7 @@ void heapUtils(int *a, int n) {
     int currentHeapSize = n;
 
     do {
-        printf("\n\n*********************************");
-        printf("\n*\t   Heap Utils Menu      *\n");
-        printf("*********************************\n");
-
-        printf("\n1. Get Max Element");
-        printf("\n2. Update Element");
-        printf("\n3. Insert New Element");
-        printf("\n4. Delete Max Element");
-        printf("\n5. Print Heap in Array Mode");
-        printf("\n6. Print Heap in Tree Mode");
-        printf("\n7. Clear Screen");
-        printf("\n8. Exit");
+        printHeapMenu();
 
         printf("\nEnter your choice : ");
         scanf("%d", &choice);
@@ -349,4 +339,20 @@ void printSpaces(int n) {
     for(i = 0;i < n;i++) {
         printf("   ");
     }
+}
+
+// Prints Menu for Heap Operations
+void printHeapMenu() {
+    printf("\n\n*********************************");
+    printf("\n*\t   Heap Utils Menu      *\n");
+    printf("*********************************\n");
+
+    printf("\n1. Get Max Element");
+    printf("\n2. Update Element");
+    printf("\n3. Insert New Element");
+    printf("\n4. Delete Max Element");
+    printf("\n5. Print Heap in Array Mode");
+    printf("\n6. Print Heap in Tree Mode");
+    printf("\n7. Clear Screen");
+    printf("\n8. Exit");
 }
