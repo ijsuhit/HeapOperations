@@ -53,7 +53,7 @@ void createHeap(int *a, int n) {
         printf("\nError : Value of n is invalid");
         return;
     }
-    for(i = n / 2 ;i >= 0;i--) { // leaf nodes start from (n / 2) + 1 where n is the number of elements
+    for(i = n / 2 - 1 ;i >= 0;i--) { // leaf nodes start from ((n / 2) + 1)th node, where n is the number of elements
         maxHeapify(a, i, n);
     }
 }
@@ -284,7 +284,7 @@ void printHeap(int *a, int n) {
     int limitIndex;                                 // Tells when to start a new line in the heap
     int heapNodes = n;
     int heapHeight = log2(n);                       // Height of the heap. It is zero when only one node is present
-    int leafNodesStart = n / 2 + 1;                 // Gives the index where the leaf nodes start in the given heap
+    int leafNodesStart = n / 2 + 1;                 // Gives the number of element where the leaf nodes start in the given heap (counting from 1)
     int maxNodes = pow(2, heapHeight + 1) - 1;      // Maximum number of nodes possible with the given height
     int gap = maxNodes;                             // gap : this tells how much gap is to be given before starting a new level
                                                     //       Also gap * 2 + 1 is the gap between any two nodes of the same level
